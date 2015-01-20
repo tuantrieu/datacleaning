@@ -1,0 +1,20 @@
+---
+title: "DATA DICTIONARY"
+author: "Tuan"
+date: "Tuesday, January 20, 2015"
+output: html_document
+---
+
+The run_analysis.R performs data cleaning on the dataset obtained from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+The data folder and script must be put in the working directory of R.
+
+First, the script reads feature names from features.txt. And then reads train.txt and test.txt files into 2 data frames with variable names as feature names. Subject id and activity id for each record in train.txt and test.txt also read and bound into the 2 data frames.
+
+Next, records in train and test datasets were merged into one dataset, named data
+
+After that, a new dataset was created by extracting only variables that are mean or standard deviation of measurements, this new dataset was named extracted_data
+
+Then, name of activities was read from the file activity_labels.txt, and id of activities in extracted_data was replaced by activity names.
+
+Lastly, mean of each variables in extracted_data for each subject and each activity was taken and generate a new dataset, named tidy_data. There are 30 subjects and 6 activities, so that the tidy_data has 180 records.
